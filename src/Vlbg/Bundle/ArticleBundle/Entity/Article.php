@@ -10,6 +10,7 @@ use JMS\Serializer\Annotation\Exclude;
  * Class Article
  * @package Vlbg\Bundle\ArticleBundle\Entity
  * @Relation("self", href="expr('articles/' ~ object.getId())")
+ * @Relation("comments", href=@Route("get_article_comments", parameters={"parentId" = "expr(object.getId())"}))
  */
 class Article
 {

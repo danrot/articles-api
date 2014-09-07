@@ -8,6 +8,11 @@ use Vlbg\Bundle\ArticleBundle\Entity\Comment;
 
 class CommentController extends FOSRestController implements ClassResourceInterface
 {
+    public function cgetAction($parentId)
+    {
+
+    }
+
     public function getAction($parentId, $id)
     {
         // load data
