@@ -4,11 +4,33 @@ namespace Vlbg\Bundle\ArticleBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Routing\ClassResourceInterface;
+use Hateoas\Representation\CollectionRepresentation;
+use Hateoas\Representation\PaginatedRepresentation;
 use Symfony\Component\HttpFoundation\Request;
 use Vlbg\Bundle\ArticleBundle\Entity\Article;
 
 class ArticleController extends FOSRestController implements ClassResourceInterface
 {
+    public function cgetAction(Request $request)
+    {
+        $articles = array();
+        $articles[] = new Article('That\'s a great article!', array(), 1, 'Title');
+        $articles[] = new Article('That\'s another great article!', array(), 2, 'Another title');
+
+        $view = $this->view(
+            new PaginatedRepresentation(
+                new CollectionRepresentation($articles),
+                'get_articles',
+                array(),
+                $request->get('page', 1),
+                $request->get('pageSize', 10),
+                10
+            )
+        );
+
+        return $this->handleView($view);
+    }
+
     public function getAction($id)
     {
         // load data
