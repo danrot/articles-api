@@ -3,6 +3,7 @@
 namespace Vlbg\Bundle\ArticleBundle\Entity;
 
 use Hateoas\Configuration\Annotation\Relation;
+use Hateoas\Configuration\Annotation\Route;
 use JMS\Serializer\Annotation\Exclude;
 
 /**

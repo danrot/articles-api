@@ -1,4 +1,5 @@
 vlbg_article:
     resource: "@VlbgArticleBundle/Resources/config/routing.xml"
     prefix:   /
+    type: rest
 

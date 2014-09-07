@@ -2,6 +2,10 @@
 
 namespace Vlbg\Bundle\ArticleBundle\Entity;
 
+/**
+ * Class Comment
+ * @package Vlbg\Bundle\ArticleBundle\Entity
+ */
 class Comment
 {
     private $id;
