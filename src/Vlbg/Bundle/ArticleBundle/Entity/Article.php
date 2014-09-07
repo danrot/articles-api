@@ -2,6 +2,8 @@
 
 namespace Vlbg\Bundle\ArticleBundle\Entity;
 
+use JMS\Serializer\Annotation\Exclude;
+
 class Article
 {
     /**
@@ -21,6 +23,7 @@ class Article
 
     /**
      * @var Comment[]
+     * @Exclude
      */
     private $comments;
 
